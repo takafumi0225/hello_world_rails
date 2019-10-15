@@ -15,6 +15,10 @@ class UsersController < ApplicationController
     @user.destroy!
   end
 
+  def create
+    User.create!(user_params)
+  end
+
   private
     def user_params
       params.require(:user).permit(:account, :name, :email)
